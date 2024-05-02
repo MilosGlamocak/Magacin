@@ -1,0 +1,10 @@
+.armoryCont {
+    height: 100%;
+    max-width: 70%!important;
+    background-color: purple !important;
+    margin-right: 0 !important;
+}
+
+.armoryHeader {
+    font-family: 'D Day Stencil', sans-serif;                                  
+}

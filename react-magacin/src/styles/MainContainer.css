@@ -1,0 +1,48 @@
+.mainContainer {
+    height: 100vh !important;
+    max-width: 100% !important;
+    background-color: black;
+    color: white;
+    display: flex !important;
+    flex-direction: row;
+    padding: 0 !important;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'D Day Stencil', sans-serif;                                  
+}
+
+.menuContainer {
+    max-width: 30% !important;
+    height: 100%;
+    display: flex !important;
+    align-items: baseline;
+    flex-direction: column;
+    justify-content: baseline;
+    user-select: none;
+    gap: 25%;
+}
+
+.menuHeader {
+    font-size: 5rem;
+    margin: 2rem 0 0 2rem;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: baseline;
+    margin: 0 0 0 -2.5rem;
+}
+
+.menuLine {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: white;   
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
