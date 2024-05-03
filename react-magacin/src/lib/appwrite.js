@@ -1,4 +1,5 @@
 import {Client, Account, ID, Avatars, Databases, Query} from 'appwrite'
+import { useAuth } from '../store';
 
 export const appwriteConfig = {
     endpoint: 'https://cloud.appwrite.io/v1',
@@ -57,7 +58,8 @@ export const createUser = async (email, password, username) => {
 
 export const signIn = async (email, password) => {
     try {
-        const session = await account.createEmailSession(email, password)
+        const session = await account.createEmailSession(email, password);
+        window.location.reload()
 
         return session
     } catch (error) {
@@ -101,6 +103,6 @@ export const getAllItems = async () => {
     }
 }
 
-export const deleteSession = async () => {
-    
+export const deleteSession = async (sessionId) => {
+    await account.deleteSessions(sessionId)
 }

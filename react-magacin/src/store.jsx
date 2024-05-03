@@ -1,5 +1,5 @@
 import {create} from 'zustand';
-import { getCurrentUser, signIn } from './lib/appwrite';
+import { deleteSession, getCurrentUser, signIn } from './lib/appwrite';
 
 export const useCounterStore = create((set) => ({
     count: 0,
@@ -16,10 +16,10 @@ export const useCounterStore = create((set) => ({
 
 export const useAuth = create((set) => ({
     credentials: {email: '', password: ''},
-    loggedIn: false,
     username: '',
     email: '',
     avatar: '',
+    sessionId: null,
 
     setEmail: (e) => {
         set((state) => ({
@@ -32,26 +32,30 @@ export const useAuth = create((set) => ({
         }))
     },
 
-    /*logIn: async (email, password) => {
-        signIn(email, password)
-        .then((res) => {
-            console.log(res);
-            set((state) => ({loggedIn: true}));
-            console.log(user)
-        })
-    },*/
-
     checkUser: async () => {
         getCurrentUser()
         .then((res) => {
             set((state) => (
                 {username: res.username,
                 email: res.email,
-                loggedIn: true,
-                avatar: res.avatar
+                avatar: res.avatar,
+                sessionId: res.$id
                 }
             ));
-        });
+        }).catch((error) => console.log(error))
+        
+    },
+
+    logOut: async (sessionId) => {
+        if (sessionId) deleteSession(sessionId).then (
+            set((state) => ({
+                username: '',
+                email: '',
+                avatar: '',
+                sessionId: null,
+            })),
+            console.log(sessionId),
+        );    
     }
 }))
 
