@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getAllItems, getCurrentUser, createUser, signIn } from '../lib/appwrite';
-import { useAuth } from '../store';
+import { Container } from '@mui/material';
+import '../styles/SignIn.css'
 
 function SignIn() {
     const [credentials, setCredentials] = useState({
@@ -31,21 +32,23 @@ function SignIn() {
       })
     } */
   
-    const handleGetAllItems =() => {
+   /* const handleGetAllItems =() => {
       getAllItems().then((res) => {
         console.log(res.documents)
       })
     }
-  
+    <button onClick={handleGetAllItems}>Log Items</button>*/
+
+
     return (
-      <div>
+      <Container className='signinCont'>
         <input type="text" placeholder='email' id='email' onChange={ handleSetCredentials}/>
         <input type="text" placeholder='username' id='username' onChange={ handleSetCredentials}/>
         <input type="password" placeholder='password' id='password' onChange={handleSetCredentials}/>
         <button onClick={handleSignUp}>Sign Up</button>
         <button onClick={() => signIn(credentials.email, credentials.password)}>Sign In</button>
-        <button onClick={handleGetAllItems}>Log Items</button>
-      </div>
+        
+      </Container>
     );
   };
 

@@ -12,13 +12,14 @@
     justify-content: center;
     align-items: center;
     gap: 0rem;
+    padding: 0 !important;
 }
 
-.icon {
-    background-color: yellow;
+.profileIcon {
     height: 10rem;
     max-width: 10rem !important;
     border-radius: 50%;
+    border: 5px solid gray;
 }
 
 .username {

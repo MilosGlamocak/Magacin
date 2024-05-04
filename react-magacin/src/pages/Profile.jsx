@@ -7,11 +7,17 @@ import SignIn from './SignIn'
 
 function Profile() {
 
-  const { email ,username, avatar, logIn, setEmail, setPassword, credentials, checkUser, sessionId, logOut} = useAuth((state) => state)
+  const { email ,username, avatar, checkUser, sessionId, logOut} = useAuth((state) => state)
 
   useEffect(() => {
-    checkUser()
+    setTimeout(() => {
+      checkUser()
+    }, 1000)
   }, [sessionId])
+
+  function handleLogOut() {
+    logOut(sessionId);
+  }
 
   return (
     <Container className='profileCont'>
@@ -19,10 +25,10 @@ function Profile() {
         {
           sessionId ? (
             <>
-              <img src={avatar} alt="" className='icon'/>
+              <img src={avatar} alt="" className='profileIcon'/>
               <h2 className='username'>{username}</h2>
               <h3 className='email'>{email}</h3>
-              <button onClick={() => logOut(sessionId)}>Log Out</button>
+              <button onClick={handleLogOut}>Log Out</button>
             </>
           ) : (
             <SignIn />
