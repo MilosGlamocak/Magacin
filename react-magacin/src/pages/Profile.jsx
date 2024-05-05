@@ -4,6 +4,7 @@ import '../styles/Profile.css'
 import { useAuth, useCounterStore } from '../store'
 import { deleteSession, getCurrentUser } from '../lib/appwrite'
 import SignIn from './SignIn'
+import SignUp from './SignUp'
 
 function Profile() {
 
@@ -30,9 +31,9 @@ function Profile() {
               <h3 className='email'>{email}</h3>
               <button onClick={handleLogOut}>Log Out</button>
             </>
-          ) : (
+          ) : /*(
             <SignIn />
-          ) 
+          ) */ <SignUp /> 
         }
         
       </Container>

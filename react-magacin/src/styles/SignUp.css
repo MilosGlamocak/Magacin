@@ -1,0 +1,61 @@
+.signupCont {
+    max-width: 100% !important;
+    height: 100%;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.signupHeading {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.headingSmall {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.headingLarge {
+    font-size: 2.5rem;
+    margin: 0
+}
+
+.signupInputForm {
+    height: 50%;
+    max-width: 40% !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: baseline;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.signupFooter {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0rem;
+    margin: -6rem 0 0 0 !important;
+    padding: 0 !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footerSmall {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footerLink {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: -0.5rem 0 0 0;
+}
