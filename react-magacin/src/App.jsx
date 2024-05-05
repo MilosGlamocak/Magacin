@@ -5,6 +5,8 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import Armory from './pages/Armory';
 import Profile from './pages/Profile'
 import Cart from './pages/Cart'
+import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
 
 
 
@@ -15,8 +17,12 @@ const App = () => {
       <Routes>
         <Route path='/' element={<MainContainer/>}>
           <Route index element={<Armory/>}/>
-          <Route path='profile' element={<Profile/>}/>
+          <Route path='profile' element={<Profile/>}>
+            <Route path='signup' element={<SignUp/>}/>
+            <Route path='login' element={<LogIn/>}/>
+          </Route>
           <Route path='cart' element={<Cart/>}/>
+          
         </Route>
       </Routes>
     </BrowserRouter>

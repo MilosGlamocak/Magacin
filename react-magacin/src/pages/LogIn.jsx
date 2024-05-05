@@ -6,7 +6,7 @@ import InputField from '../components/InputField';
 import CustomButton from '../components/CustomButton';
 import { Outlet, Link } from "react-router-dom";
 
-function SignUp() {
+function LogIn() {
 
     const inputs = [
         {id: 'username', placeholder: 'Username', /*onChange: handleOnChange*/},
@@ -16,25 +16,24 @@ function SignUp() {
     ]
 
   return (
-    <Container className='signupCont'>
-        <Container className='signupHeading'>
+    <Container className='loginCont'>
+        <Container className='loginHeading'>
             <h3 className='headingSmall'>New to</h3>
             <h2 className='headingLarge'>Liberty Lockbox?</h2>
         </Container>
-        <Container className='signupInputForm'>
+        <Container className='loginInputForm'>
             {inputs.map((item) => {
                 return <InputField id={item.id} placeholder={item.placeholder} key={item.id} /*onChange={item.onChange}*//>
             })}
             <CustomButton text={'Sign Up'}/>
         </Container>
-        <Container className='signupFooter'>
-            <h3 className='footerSmall'>Already have an Account?</h3>
-            <Link to="login" className='link'><h2 className='footerLink'>Log In</h2></Link>
-        </Container> 
-        <Outlet/>
+        <Container className='loginFooter'>
+            <h3 className='footerSmall'>New here?</h3>
+            <Link to="signup" className='link'><h2 className='footerLink'>Create an Account</h2></Link>
+        </Container>
+        <Outlet />  
     </Container>
-    
   )
 }
  
-export default SignUp
+export default LogIn
