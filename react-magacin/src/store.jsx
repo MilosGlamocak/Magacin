@@ -15,22 +15,10 @@ export const useCounterStore = create((set) => ({
 }));
 
 export const useAuth = create((set) => ({
-    credentials: {email: '', password: ''},
     username: '',
     email: '',
     avatar: '',
     sessionId: null,
-
-    setEmail: (e) => {
-        set((state) => ({
-            credentials: {...state.credentials, email: e}
-        }));
-    },
-    setPassword: (e) => {
-        set((state) => ({
-            credentials: {...state.credentials, password: e}
-        }))
-    },
 
     checkUser: async () => {
         getCurrentUser()
