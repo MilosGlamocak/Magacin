@@ -29,7 +29,8 @@ function SignUp() {
         </Container>
         <Container className='signupFooter'>
             <h3 className='footerSmall'>Already have an Account?</h3>
-            <h2 className='footerLink'>Log In</h2>
+            <Link to="/login" className='link'><h2 className='footerLink'>Log In</h2></Link>
+            
         </Container> 
     </Container>
     

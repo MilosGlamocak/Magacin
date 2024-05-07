@@ -17,12 +17,10 @@ const App = () => {
       <Routes>
         <Route path='/' element={<MainContainer/>}>
           <Route index element={<Armory/>}/>
-          <Route path='profile' element={<Profile/>}>
-            <Route path='signup' element={<SignUp/>}/>
-            <Route path='login' element={<LogIn/>}/>
-          </Route>
-          <Route path='cart' element={<Cart/>}/>
-          
+          <Route path='profile' element={<Profile/>}/>
+          <Route path='signup' element={<SignUp/>}/>
+          <Route path='login' element={<LogIn/>}/>
+          <Route path='cart' element={<Cart/>}/> 
         </Route>
       </Routes>
     </BrowserRouter>
