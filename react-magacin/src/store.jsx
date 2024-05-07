@@ -1,19 +1,6 @@
 import {create} from 'zustand';
 import { getCurrentUser, signIn } from './lib/appwrite';
 
-export const useCounterStore = create((set) => ({
-    count: 0,
-    increment: () => {
-        set((state) => ({count: state.count + 1}))
-    },
-    decrement: () => {
-        set((state) => ({count: state.count - 1}))
-    },
-    incrementAsync: async () => {
-        await new Promise((resolve) => setTimeout(resolve, 1000)).then((res) => set((state) => ({count: state.count + 1})))
-    }
-}));
-
 export const useAuth = create((set) => ({
     credentials: {email: '', password: ''},
     loggedIn: false,
@@ -51,7 +38,23 @@ export const useAuth = create((set) => ({
                 avatar: res.avatar
                 }
             ));
+<<<<<<< Updated upstream
         });
+=======
+        }).catch((error) => console.error(error))   
+    },
+
+    logOut: async (sessionId) => {
+        if (sessionId) deleteSession(sessionId).then (
+            set((state) => ({
+                username: '',
+                email: '',
+                avatar: '',
+                sessionId: null,
+            })),
+            console.log(sessionId),
+        );    
+>>>>>>> Stashed changes
     }
 }))
 

@@ -1,7 +1,14 @@
 import { Container } from '@mui/material'
 import React, { useEffect } from 'react'
 import '../styles/Profile.css'
+<<<<<<< Updated upstream
 import { useAuth, useCounterStore } from '../store'
+=======
+import { useAuth } from '../store'
+import { deleteSession, getCurrentUser } from '../lib/appwrite'
+import SignIn from './SignIn'
+import LogIn from './LogIn'
+>>>>>>> Stashed changes
 
 function Profile() {
 
@@ -21,6 +28,7 @@ function Profile() {
               <h2 className='username'>{username}</h2>
               <h3 className='email'>{email}</h3>
             </>
+<<<<<<< Updated upstream
           ) : (
             <>
               <input type="text" placeholder='email' onChange={(e) => setEmail(e.target.value)}/>
@@ -28,6 +36,11 @@ function Profile() {
               <button onClick={() => logIn(credentials.email, credentials.password)}>Log In</button>
             </>
           )
+=======
+          ) : /*(
+            <SignIn />
+          ) */ <LogIn/> 
+>>>>>>> Stashed changes
         }
         
       </Container>

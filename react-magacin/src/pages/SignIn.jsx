@@ -45,9 +45,16 @@ function SignIn() {
         <input type="text" placeholder='username' id='username' onChange={ handleSetCredentials}/>
         <input type="password" placeholder='password' id='password' onChange={handleSetCredentials}/>
         <button onClick={handleSignUp}>Sign Up</button>
+<<<<<<< Updated upstream
         <button onClick={handleSignIn}>Sign In</button>
         <button onClick={handleGetAllItems}>Log Items</button>
       </div>
+=======
+        <button onClick={() => signIn(credentials.email, credentials.password)}>Sign In</button>
+        
+        <button >Add item</button>
+      </Container>
+>>>>>>> Stashed changes
     );
   };
 

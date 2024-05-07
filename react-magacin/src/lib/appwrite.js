@@ -44,7 +44,7 @@ export const createUser = async (email, password, username) => {
                 email,
                 username,
                 avatar: avatarUrl
-            }
+            },
         )
 
         return newUser;
